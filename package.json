@@ -1,0 +1,25 @@
+{
+  "name": "iplogger",
+  "version": "1.0.0",
+  "description": "Un IPLogger que envie las IPs a Telegram",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kalefoo/iplogger.git"
+  },
+  "keywords": [
+    "ip",
+    "logger",
+    "telegram",
+    "iplogger"
+  ],
+  "author": "Kalefoo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kalefoo/iplogger/issues"
+  },
+  "homepage": "https://github.com/Kalefoo/iplogger#readme"
+}
