@@ -21,5 +21,11 @@
   "bugs": {
     "url": "https://github.com/Kalefoo/iplogger/issues"
   },
-  "homepage": "https://github.com/Kalefoo/iplogger#readme"
+  "homepage": "https://github.com/Kalefoo/iplogger#readme",
+  "dependencies": {
+    "axios": "^0.26.1",
+    "express": "^4.17.3",
+    "ipify2": "^1.1.2",
+    "node-fetch": "^3.2.3"
+  }
 }
