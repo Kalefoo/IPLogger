@@ -16,10 +16,3 @@ app.use((req, res) => {
 });
 
 app.listen(5000);
-
-(async() => {
-  const ipfy = await axios.get('https://api.ipify.org?format=json');
-  const ipv4 = ipfy.data
-  
-  console.log(ipv4)
-})
