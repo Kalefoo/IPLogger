@@ -1,7 +1,7 @@
 {
   "name": "iplogger",
   "version": "1.0.0",
-  "description": "Un IPLogger que envia los datos a Telegram y Discord.",
+  "description": "Un IPLogger que envia los datos a Discord.",
   "main": "index.ts",
   "scripts": {
     "start": "ts-node ./index.ts"
