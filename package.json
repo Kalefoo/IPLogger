@@ -1,7 +1,7 @@
 {
   "name": "iplogger",
   "version": "1.0.0",
-  "description": "Un IPLogger que envia los datos a Discord.",
+  "description": "IPLogger made in TypeScript that sends all logs to a Discord bot.",
   "main": "index.ts",
   "scripts": {
     "start": "ts-node ./index.ts"
