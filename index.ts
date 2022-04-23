@@ -25,15 +25,6 @@ app.use(express.urlencoded({ extended: true }));
 // Colors
 var colors = require('colors/safe');
 
-// Telegram
-import { Telegraf } from 'telegraf';
-const bot = new Telegraf(`${process.env.TELE_TOKEN}`);
-
-bot.launch()
-
-process.once('SIGINT', () => bot.stop('SIGINT'));
-process.once('SIGTERM', () => bot.stop('SIGTERM'));
-
 // Discord
 import Discord from 'discord.js';
 const intents = new Discord.Intents(32767);
@@ -57,9 +48,6 @@ app.get('*', async (req: Request, res: Response): Promise<void> => {
     const data = info.data;
   
     res.redirect('https://www.youtube.com/watch?v=dQw4w9WgXcQ');
-
-    // Telegram
-
 
     // Discord
     const webhookClient = new Discord.WebhookClient({ url: `${process.env.WH_URL}` });
