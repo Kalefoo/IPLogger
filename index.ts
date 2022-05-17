@@ -72,9 +72,9 @@ app.get('*', async (req: Request, res: Response): Promise<void> => {
       { name: 'Organization', value: data.org || 'No data', inline: true },
       { name: 'AS', value: data.as || 'No data', inline: true },
       { name: 'AS name', value: data.reverse || 'No data', inline: true },
-      { name: '¿Mobile?', value: `${data.mobile || 'No data'}`, inline: true },
-      { name: '¿Proxy?', value: `${data.mobile || 'No data'}`, inline: true },
-      { name: '¿Hosting?', value: `${data.hosting || 'No data'}`, inline: true }
+      { name: 'Mobile?', value: `${data.mobile || 'No data'}`, inline: true },
+      { name: 'Proxy?', value: `${data.mobile || 'No data'}`, inline: true },
+      { name: 'Hosting?', value: `${data.hosting || 'No data'}`, inline: true }
     )
     .setColor('#ff1616')
     
